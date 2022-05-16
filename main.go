@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"strings"
 
 	"github.com/cmstack/go-portqry/src/port"
 )
@@ -29,7 +30,7 @@ func main() {
 		return
 	}
 
-	if protocol != "tcp" {
+	if strings.ToLower(protocol) != "tcp" {
 		fmt.Println("Only tcp protocol is supported for now, please specify tcp")
 	} else {
 		fmt.Println("Scanning TCP port", portnumber, "on", host)
